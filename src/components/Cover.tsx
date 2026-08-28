@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { displayCoverSrc } from '../lib/wechatCover'
+import { coverSrcCandidates } from '../lib/wechatCover'
 
 type CoverProps = {
   src: string
@@ -14,14 +14,15 @@ export function Cover({
   className = '',
   crop = 'center',
 }: CoverProps) {
-  const [failed, setFailed] = useState(false)
-  const displaySrc = displayCoverSrc(src)
+  const candidates = coverSrcCandidates(src)
+  const [index, setIndex] = useState(0)
+  const displaySrc = candidates[index]
 
   useEffect(() => {
-    setFailed(false)
+    setIndex(0)
   }, [src])
 
-  if (!displaySrc || failed) {
+  if (!displaySrc) {
     return (
       <div
         className={`cover-placeholder flex h-full w-full items-center justify-center text-white ${className}`}
@@ -45,7 +46,7 @@ export function Cover({
       className={`h-full w-full object-cover ${
         crop === 'right' ? 'object-right' : 'object-center'
       } ${className}`}
-      onError={() => setFailed(true)}
+      onError={() => setIndex((current) => current + 1)}
     />
   )
 }

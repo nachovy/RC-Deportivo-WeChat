@@ -31,11 +31,19 @@ export function isWeChatCoverUrl(raw: string): boolean {
   }
 }
 
+export function wechatCoverProxySrc(src: string): string {
+  return `/api/wechat-cover?url=${encodeURIComponent(normalizeCoverUrl(src))}`
+}
+
 export function displayCoverSrc(src: string): string {
+  return normalizeCoverUrl(src)
+}
+
+export function coverSrcCandidates(src: string): string[] {
   const value = normalizeCoverUrl(src)
-  if (!value) return ''
-  if (!isWeChatCoverUrl(value)) return value
-  return `/api/wechat-cover?url=${encodeURIComponent(value)}`
+  if (!value) return []
+  if (!isWeChatCoverUrl(value)) return [value]
+  return [value, wechatCoverProxySrc(value)]
 }
 
 export async function fetchWeChatCover(raw: string): Promise<{
