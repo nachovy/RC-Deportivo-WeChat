@@ -1,0 +1,66 @@
+{
+  "title": "皇家拉科鲁尼亚体育",
+  "subtitle": "历史战报",
+  "seasons": [
+    {
+      "id": "season-2526",
+      "name": "2025/26",
+      "order": 2
+    },
+    {
+      "id": "season-2425",
+      "name": "2024/25",
+      "order": 3
+    },
+    {
+      "id": "season-2ba26cbc",
+      "name": "2026/27",
+      "order": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-c380472c",
+      "seasonId": "season-2ba26cbc",
+      "name": "西甲",
+      "order": 1
+    },
+    {
+      "id": "cat-45537258",
+      "seasonId": "season-2526",
+      "name": "西乙",
+      "order": 1
+    },
+    {
+      "id": "cat-5c2a65ae",
+      "seasonId": "season-2526",
+      "name": "国王杯",
+      "order": 2
+    },
+    {
+      "id": "cat-7d316817",
+      "seasonId": "season-2425",
+      "name": "西乙",
+      "order": 1
+    },
+    {
+      "id": "cat-3b93a1bb",
+      "seasonId": "season-2425",
+      "name": "国王杯",
+      "order": 2
+    }
+  ],
+  "articles": [
+    {
+      "id": "article-19e27996",
+      "categoryId": "cat-c380472c",
+      "title": "西甲2轮：马拉加1-1拉科鲁尼亚",
+      "cover": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/RkUk5UuHqhxIXocALOpfVM0PWZLJ29ZFqeicv983uAw4Libia8ZFbRFGv4FcCXwbl7r9GwxzLvlPwkfw2Q6CNDlGFhnUD6TSmUdWYOtsSMYATc/640?wx_fmt=jpeg&amp;from=appmsg",
+      "url": "https://mp.weixin.qq.com/s/o9YbglKNL_bMVmrGcuyCkQ",
+      "featured": false,
+      "featuredOrder": 1,
+      "order": 1,
+      "publishedAt": "2026-08-28"
+    }
+  ]
+}

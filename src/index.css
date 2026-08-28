@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+:root {
+  --club-blue: #0033a0;
+  --club-navy: #0b1f4d;
+  --page-bg: #f3f5f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family:
+    'PingFang SC',
+    'Hiragino Sans GB',
+    'Noto Sans SC',
+    system-ui,
+    sans-serif;
+  background: var(--page-bg);
+  color: #1f2937;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.drag-handle {
+  cursor: grab;
+  touch-action: none;
+  letter-spacing: -0.35em;
+  user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.phone-shell {
+  width: min(430px, 100%);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 0 1px #e5e7eb;
+}
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-touch::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.cover-placeholder {
+  background:
+    linear-gradient(135deg, rgba(0, 51, 160, 0.92), rgba(11, 31, 77, 0.88)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 0 12px,
+      transparent 12px 24px
+    );
+}
