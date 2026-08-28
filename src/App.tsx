@@ -8,7 +8,13 @@ import {
   useParams,
 } from 'react-router-dom'
 import { categoriesForSeason, sortedSeasons } from './lib/selectors'
-import { loadContent, resetContent, saveContent } from './lib/storage'
+import {
+  hydrateContent,
+  isSampleContent,
+  loadContent,
+  resetContent,
+  saveContent,
+} from './lib/storage'
 import { AdminPage } from './pages/AdminPage'
 import { PortalPage } from './pages/PortalPage'
 import type { SiteContent } from './types'
@@ -67,7 +73,10 @@ function HomeRedirect({ content }: { content: SiteContent }) {
 }
 
 function App() {
-  const [content, setContent] = useState<SiteContent>(() => loadContent())
+  const [content, setContent] = useState<SiteContent | null>(() => {
+    const local = loadContent()
+    return isSampleContent(local) ? null : local
+  })
   const persist = useMemo(
     () => (next: SiteContent) => {
       saveContent(next)
@@ -75,6 +84,24 @@ function App() {
     },
     [],
   )
+
+  useEffect(() => {
+    let cancelled = false
+    void hydrateContent().then((next) => {
+      if (!cancelled) setContent(next)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  if (!content) {
+    return (
+      <div className="phone-shell grid h-full place-items-center text-sm text-slate-500">
+        正在同步内容…
+      </div>
+    )
+  }
 
   return (
     <HashRouter>

@@ -529,9 +529,11 @@ export function AdminPage({ content, onChange, onReset }: AdminPageProps) {
               </button>
             </div>
             <p className="text-xs leading-5 text-slate-500">
-              浏览器会把修改保存在本地。导出 JSON 后可覆盖
+              浏览器会把修改保存在本地。GitHub Pages 读取仓库里的
               <code className="mx-1 rounded bg-slate-100 px-1">public/content.json</code>
-              ，再重新构建即可发布。
+              。导出 JSON 覆盖该文件并推送到
+              <code className="mx-1 rounded bg-slate-100 px-1">main</code>
+              后，线上会同步这份内容。
             </p>
           </section>
         )}

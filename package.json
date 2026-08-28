@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "test": "tsx src/lib/selectors.test.ts && tsx src/lib/articleMeta.test.ts && tsx src/lib/wechatCover.test.ts && tsx src/lib/wechatPublish.test.ts && tsx src/lib/wechatOfficial.test.ts"
+    "test": "tsx src/lib/selectors.test.ts && tsx src/lib/articleMeta.test.ts && tsx src/lib/wechatCover.test.ts && tsx src/lib/wechatPublish.test.ts && tsx src/lib/wechatOfficial.test.ts && tsx src/lib/storage.test.ts"
   },
   "dependencies": {
     "react": "^19.2.8",
